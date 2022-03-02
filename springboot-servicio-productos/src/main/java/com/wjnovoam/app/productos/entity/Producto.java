@@ -22,6 +22,9 @@ public class Producto implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date createAt;
 
+    @Transient //Este campo no es persistente, no esta mapeado en la base de datos
+    private Integer port;
+
     public Producto() {
     }
 
@@ -55,5 +58,13 @@ public class Producto implements Serializable {
 
     public void setCreateAt(Date createAt) {
         this.createAt = createAt;
+    }
+
+    public Integer getPort() {
+        return port;
+    }
+
+    public void setPort(Integer port) {
+        this.port = port;
     }
 }

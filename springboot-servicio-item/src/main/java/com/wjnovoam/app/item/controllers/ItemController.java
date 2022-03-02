@@ -16,7 +16,7 @@ import java.util.List;
 public class ItemController {
 
     @Autowired
-    @Qualifier("servicefeing")
+    @Qualifier("serviceRestTemplate")
     private ItemService itemService;
 
     @GetMapping("/listar")
@@ -28,4 +28,5 @@ public class ItemController {
     public Item detalle(@PathVariable Long id, @PathVariable Integer cantidad){
         return itemService.findById(id,cantidad);
     }
+
 }
